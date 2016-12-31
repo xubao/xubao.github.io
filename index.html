@@ -48,9 +48,9 @@
       </nav>
       <nav id="sub-nav">
         
-          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="Flux RSS"></a>
         
-        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+        <a id="nav-search-btn" class="nav-icon" title="Rechercher"></a>
       </nav>
       <div id="search-form-wrap">
         <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
@@ -83,12 +83,25 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>Test blog</p>
+        <p>参照Hexo<a href="https://hexo.io/zh-cn/docs/index.html" target="_blank" rel="external">官方文档</a> 搭建了这个博客，记录下过程。</p>
+<h2 id="安装Node-js"><a href="#安装Node-js" class="headerlink" title="安装Node.js"></a>安装Node.js</h2><p>官方推荐使用<a href="https://github.com/creationix/nvm" target="_blank" rel="external">nvm</a> 安装Node.js，由于我使用<a href="https://github.com/robbyrussell/oh-my-zsh" target="_blank" rel="external">oh-my-zsh</a>，安装<a href="https://github.com/lukechilds/zsh-nvm" target="_blank" rel="external">zsh-nvm</a> 更加简单。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">$ git <span class="built_in">clone</span> https://github.com/lukechilds/zsh-nvm ~/.oh-my-zsh/custom/plugins/zsh-nvm</div><div class="line">$ vi ~/.zshrc</div><div class="line">$ plugins+=(zsh-nvm)</div><div class="line">$ <span class="built_in">source</span> ~/.zshrc</div><div class="line">$ nvm upgrade</div><div class="line">$ nvm install stable</div></pre></td></tr></table></figure>
+<h2 id="Hexo-配置"><a href="#Hexo-配置" class="headerlink" title="Hexo 配置"></a>Hexo 配置</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ npm install -g hexo-cli --register=https://register.npm.taobao.org <span class="comment"># 不用淘宝npm源会出错</span></div><div class="line">$ sudo hexo init ~/workspace/hexo <span class="comment"># macOS下需要sudo权限</span></div></pre></td></tr></table></figure>
+<p>hexo 常用操作</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="comment"># 新建一篇文章</span></div><div class="line">$ hexo generate <span class="comment"># 生成静态文件到plubic目录</span></div><div class="line">$ hexo server <span class="comment"># 启动服务器，可以访问localhost:4000查看</span></div><div class="line">$ hexo deploy <span class="comment"># 部署到Git</span></div></pre></td></tr></table></figure>
+<p>hexo 命令可以简写</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">$ hexo n = hexo new</div><div class="line">$ hexo g = hexo generate </div><div class="line">$ hexo s = hexo server</div><div class="line">$ hexo d = deploy</div></pre></td></tr></table></figure>
+<h2 id="部署到Github"><a href="#部署到Github" class="headerlink" title="部署到Github"></a>部署到Github</h2><p>首先需要在Github上创建仓库 username.github.io，并配置好<a href="https://help.github.com/articles/generating-an-ssh-key/" target="_blank" rel="external">SSH key</a></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$ ssh-keygen -t rsa -b 4096 -C <span class="string">"your_email@example.com"</span></div><div class="line">$ pbcopy &lt; ~/.ssh/id_rsa.pub</div><div class="line">$ pbcopy &lt; /var/root/.ssh/id_rsa.pub <span class="comment"># macOS下需要root权限</span></div></pre></td></tr></table></figure>
+<p>安装 <a href="https://github.com/hexojs/hexo-deployer-git" target="_blank" rel="external">hexo-deployer-git</a></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ npm install hexo-deployer-git --save</div></pre></td></tr></table></figure>
+<p>修改配置文件 _config.yml<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">deploy:</div><div class="line">  <span class="built_in">type</span>: git</div><div class="line">  repo: git@github.com:xubao/xubao.github.io.git</div><div class="line">  branch: master</div></pre></td></tr></table></figure></p>
+<p>生成静态文件并发布<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ hexo g</div><div class="line">$ hexo d</div></pre></td></tr></table></figure></p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/12/31/Test/" data-id="cixddqej000010u2vh5xveilt" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/12/31/Test/" data-id="cixdg9wxz0000jv2vner82jx6" class="article-share-link">Partager</a>
       
       
     </footer>
@@ -133,7 +146,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/12/31/hello-world/" data-id="cixddqeiv00000u2vradailqv" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/12/31/hello-world/" data-id="cixdg9wyb0001jv2v680cqblz" class="article-share-link">Partager</a>
       
       
     </footer>
@@ -168,7 +181,7 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Recent Posts</h3>
+    <h3 class="widget-title">Articles récents</h3>
     <div class="widget">
       <ul>
         
@@ -192,8 +205,8 @@
   
   <div class="outer">
     <div id="footer-info" class="inner">
-      &copy; 2016 John Doe<br>
-      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+      &copy; 2017 John Doe<br>
+      Propulsé by <a href="http://hexo.io/" target="_blank">Hexo</a>
     </div>
   </div>
 </footer>
