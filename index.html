@@ -1,256 +1,247 @@
 <!DOCTYPE html>
-<html lang="">
-  <head>
-    <meta charset="UTF-8"/>
-<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
 
 
-<meta http-equiv="Cache-Control" content="no-transform" />
-<meta http-equiv="Cache-Control" content="no-siteapp" />
+  <html class="light page-home">
 
 
+<head>
+  <meta charset="utf-8">
+  
+  <title>Hexo</title>
 
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
+  
+    <meta name="keywords" content="keywords" />
+  
 
-
-
-
-
-  <link rel="alternate" href="/atom.xml" title="Hexo">
-
-
-
-
-  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=2.1.0" />
-
-
-
-<link rel="canonical" href="http://xubao.github.io/"/>
-
-
-<meta property="og:type" content="website">
+  <meta property="og:type" content="website">
 <meta property="og:title" content="Hexo">
 <meta property="og:url" content="http://xubao.github.io/index.html">
 <meta property="og:site_name" content="Hexo">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Hexo">
 
+  
 
-<link rel="stylesheet" type="text/css" href="/css/style.css?v=2.1.0" />
+  
+    <link rel="icon" href="/favicon.ico">
+  
+
+  <link href="/css/styles.css?v=07a1c304" rel="stylesheet">
 
 
+  
+    <link rel="stylesheet" href="/css/personal-style.css">
+  
 
-  <link rel="stylesheet" type="text/css" href="/lib/fancybox/jquery.fancybox.css" />
+  
 
+  
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//hm.baidu.com/hm.js?57e94d016e201fba3603a8a2b0263af0";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
 
 
 
   
-
-
-
-    <title> Hexo </title>
-  </head>
-
-  <body>
-    <div class="container">
-      <header id="header" class="header"><div class="logo-wrapper">
-  <a href="/." class="logo">Hexo</a>
-</div>
-
-<nav class="site-nav">
+    <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
   
-    <ul id="menu" class="menu">
-      
-        
-        <li class="menu-item">
-          <a class="menu-item-link" href="/">
-            Home
-          </a>
-        </li>
-      
-        
-        <li class="menu-item">
-          <a class="menu-item-link" href="/archives/">
-            Archives
-          </a>
-        </li>
-      
-      
-    </ul>
-  
-</nav>
-
-<div class="mobile-navbar">
-  <div class="mobile-header">
-    <div class="mobile-header-logo">
-      <a href="/." class="logo">Hexo</a>
-    </div>
-
-    <div class="mobile-header-icon">
-      <span></span>
-      <span></span>
-      <span></span>
-    </div>
-  </div>
-  <nav class="mobile-menu">
-    
-      
-      <a class="mobile-menu-item" href="/">
-        Home
-      </a>
-    
-      
-      <a class="mobile-menu-item" href="/archives/">
-        Archives
-      </a>
-    
-  </nav>
-</div>
-      </header>
-
-      <main id="main" class="main">
-        <div class="content-wrapper">
-          <div id="content" class="content">
-            
-  <section id="posts" class="posts">
-    
-      
-  <article class="post">
-    <header class="post-header">
-      <h1 class="post-title">
-        
-          <a class="post-link" href="/2016/12/31/hello-world/">Hello world!</a>
-        
-      </h1>
-
-      <div class="post-meta">
-        <span class="post-time">
-          Dec 31, 2016
-        </span>
-      </div>
-    </header>
-
-    
-
-    <div class="post-content">
-      
-        
-
-        
-          <p>参照Hexo<a href="https://hexo.io/zh-cn/docs/index.html" target="_blank" rel="external">官方文档</a> 搭建了这个博客，记录下过程。</p>
-<h2 id="安装Node-js"><a href="#安装Node-js" class="headerlink" title="安装Node.js"></a>安装Node.js</h2><p>官方推荐使用<a href="https://github.com/creationix/nvm" target="_blank" rel="external">nvm</a> 安装Node.js，由于我使用<a href="https://github.com/robbyrussell/oh-my-zsh" target="_blank" rel="external">oh-my-zsh</a>，安装<a href="https://github.com/lukechilds/zsh-nvm" target="_blank" rel="external">zsh-nvm</a> 更加简单。</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">$ git <span class="built_in">clone</span> https://github.com/lukechilds/zsh-nvm ~/.oh-my-zsh/custom/plugins/zsh-nvm</div><div class="line">$ vi ~/.zshrc</div><div class="line">$ plugins+=(zsh-nvm)</div><div class="line">$ <span class="built_in">source</span> ~/.zshrc</div><div class="line">$ nvm upgrade</div><div class="line">$ nvm install stable</div></pre></td></tr></table></figure>
-<h2 id="Hexo-配置"><a href="#Hexo-配置" class="headerlink" title="Hexo 配置"></a>Hexo 配置</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ npm install -g hexo-cli --register=https://register.npm.taobao.org <span class="comment"># 不用淘宝npm源会出错</span></div><div class="line">$ sudo hexo init ~/workspace/hexo <span class="comment"># macOS下需要sudo权限</span></div></pre></td></tr></table></figure>
-<p>hexo 常用操作</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">$ hexo n <span class="comment"># = hexo new 新建一篇文章</span></div><div class="line">$ hexo g <span class="comment"># = hexo generate 生成静态文件到plubic目录</span></div><div class="line">$ hexo s <span class="comment"># = hexo server 启动服务器，可以访问localhost:4000查看</span></div><div class="line">$ hexo d <span class="comment"># = hexo deploy部署到Git</span></div></pre></td></tr></table></figure>
-<h2 id="部署到Github"><a href="#部署到Github" class="headerlink" title="部署到Github"></a>部署到Github</h2><p>首先需要在Github上创建仓库 username.github.io，并配置好<a href="https://help.github.com/articles/generating-an-ssh-key/" target="_blank" rel="external">SSH key</a></p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$ ssh-keygen -t rsa -b 4096 -C <span class="string">"your_email@example.com"</span></div><div class="line">$ pbcopy &lt; ~/.ssh/id_rsa.pub</div><div class="line">$ pbcopy &lt; /var/root/.ssh/id_rsa.pub <span class="comment"># macOS下需要root权限</span></div></pre></td></tr></table></figure>
-<p>安装 <a href="https://github.com/hexojs/hexo-deployer-git" target="_blank" rel="external">hexo-deployer-git</a></p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ npm install hexo-deployer-git --save</div></pre></td></tr></table></figure>
-<p>修改配置文件 _config.yml<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">deploy:</div><div class="line">  <span class="built_in">type</span>: git</div><div class="line">  repo: git@github.com:xubao/xubao.github.io.git</div><div class="line">  branch: master</div></pre></td></tr></table></figure></p>
-<p>生成静态文件并发布<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo g <span class="_">-d</span></div></pre></td></tr></table></figure></p>
-
-        
-      
-    </div>
-
-    
-  </article>
-
-    
-  </section>
 
   
-  <nav class="pagination">
-    
-    
-  </nav>
+    <link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.3.0/css/font-awesome.min.css">
+  
+</head>
+
+<body>
 
 
-          </div>
-          
-        </div>  
-      </main>
+  
 
-      <footer id="footer" class="footer">
-  <div class="social-links">
-    
-      
-        
-          <a href="mailto:your@email.com" class="iconfont icon-email" title="email"></a>
-        
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-    
-    
+  
+  <div class="content-home text-center">
+  <a class="avatar" href="/">
+    <img src="/images/avatar.jpg" alt="" />
+  </a>
+  <h1 class="name" style="font-family: calligraffittiregular">
+    Hexo
+  </h1>
+  <div class="slogan">
+    Find the bug of the world
   </div>
 
+  <hr>
 
-<div class="copyright">
-  <span class="power-by">
-    Powered by <a class="hexo-link" href="https://hexo.io/">Hexo</a>
-  </span>
-  
-  <span class="theme-info">
-    Theme - 
-    <a class="theme-link" href="https://github.com/ahonn/hexo-theme-even">Even</a>
-  </span>
-
-  <span class="copyright-year">
+  <ul class="text-center nav">
     
-    &copy; 
-     
-      2015 - 
+      <li class="item">
+        
+          <a href="/archives">Blog</a>
+        
+        <span>|</span>
+      </li>
     
-    2017
+      <li class="item">
+        
+          <a href="/project/" rel="noopener noreferrer" target="_blank">Project</a>
+        
+        <span>|</span>
+      </li>
+    
+      <li class="item">
+        
+          <a href="https://github.com/forsigner" rel="noopener noreferrer" target="_blank">Github</a>
+        
+        <span>|</span>
+      </li>
+    
+      <li class="item">
+        
+          <a href="https://twitter.com/forsigner" rel="noopener noreferrer" target="_blank">Twitter</a>
+        
+        <span>|</span>
+      </li>
+    
+  </ul>
 
-    <span class="heart">
-      <i class="iconfont icon-heart"></i>
-    </span>
-    <span class="author">Bdtx</span>
-  </span>
 </div>
-      </footer>
 
-      <div class="back-to-top" id="back-to-top">
-        <i class="iconfont icon-up"></i>
-      </div>
+
+
+
+
+  <div class="modal" id="modal">
+  <span id="cover" class="cover hide"></span>
+  <div id="modal-dialog" class="modal-dialog hide-dialog">
+    <div class="modal-header">
+      <span id="close" class="btn-close">关闭</span>
     </div>
+    <hr>
+    <div class="modal-body">
+      <ul class="list-toolbox">
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/archives/"
+              rel="noopener noreferrer"
+              target="_self"
+              >
+              博客
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/category/"
+              rel="noopener noreferrer"
+              target="_self"
+              >
+              分类
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/tag/"
+              rel="noopener noreferrer"
+              target="_self"
+              >
+              标签
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/link/"
+              rel="noopener noreferrer"
+              target="_self"
+              >
+              友链
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/about/"
+              rel="noopener noreferrer"
+              target="_self"
+              >
+              关于
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/atom.xml"
+              rel="noopener noreferrer"
+              target="_blank"
+              >
+              RSS
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/search/"
+              rel="noopener noreferrer"
+              target="_self"
+              >
+              搜索
+            </a>
+          </li>
+        
+      </ul>
 
-    
+    </div>
+  </div>
+</div>
 
 
-    
+
   
 
+  <script type="text/javascript">
+  function loadScript(url, callback) {
+    var script = document.createElement('script')
+    script.type = 'text/javascript';
 
+    if (script.readyState) { //IE
+      script.onreadystatechange = function() {
+        if (script.readyState == 'loaded' ||
+          script.readyState == 'complete') {
+          script.onreadystatechange = null;
+          callback();
+        }
+      };
+    } else { //Others
+      script.onload = function() {
+        callback();
+      };
+    }
 
+    script.src = url;
+    document.getElementsByTagName('head')[0].appendChild(script);
+  }
 
+  window.onload = function() {
+    loadScript('/js/bundle.js?235683', function() {
+      // load success
+    });
+  }
+</script>
 
-  
-    <script type="text/javascript" src="/lib/jquery/jquery-3.1.1.min.js"></script>
-  
-
-  
-    <script type="text/javascript" src="/lib/fancybox/jquery.fancybox.pack.js"></script>
-  
-
-    <script type="text/javascript" src="/js/src/even.js?v=2.1.0"></script>
-<script type="text/javascript" src="/js/src/bootstrap.js?v=2.1.0"></script>
-
-  </body>
+</body>
 </html>
